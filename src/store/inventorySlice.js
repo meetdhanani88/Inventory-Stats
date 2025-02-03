@@ -32,7 +32,6 @@ const inventorySlice = createSlice({
     updateProduct: (state, action) => {
       const index = state.products.findIndex(p => p.name === action.payload.name);
       if (index !== -1) {
-        // Ensure the value is calculated correctly
         const price = parseFloat(action.payload.price.replace('$', ''));
         const quantity = action.payload.quantity;
         const value = `$${(price * quantity).toString()}`;
